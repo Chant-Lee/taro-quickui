@@ -5,8 +5,8 @@
         class="player_ontent" 
         @click="playAudio" 
         show="{{controls}}">
-        <image class="audio_content_img" show="{{playerStatus}}" src="./start.png"></image>
-        <image class="audio_content_img" show="{{!playerStatus}}" src="./pause.png"></image>
+        <image class="audio_content_img" show="{{playerStatus}}" src="https://img30.360buyimg.com/ling/jfs/t21241/218/2325219602/531/a38913b6/5b504cebN2bcec86b.png"></image>
+        <image class="audio_content_img" show="{{!playerStatus}}" src="https://img30.360buyimg.com/ling/jfs/t21247/267/2275327834/363/5256631f/5b504d26N19446ba9.png"></image>
       </div>
       <text class="duration_content">{{spendTime}}/{{totalTime}}</text>
       <slider
@@ -26,6 +26,7 @@
   .audio_content {
     flex-direction: row;
     background-color: #dddddd;
+    align-items: center; 
   }
   .player_content {
     height: 120px;
