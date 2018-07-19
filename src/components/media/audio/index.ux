@@ -1,0 +1,65 @@
+<import name="taro-audio" src="../../../packages/audio/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-audio 
+      class-name="flex-1" 
+      autoplay=false 
+      onprepared="preparedfn"
+      onplay="startfn" 
+      onpause="pausefn" 
+      onended="finishfn" 
+      onerror="errorfn" 
+      onseeking="seekingfn" 
+      onseeked="seekedfn"
+      ontime-update="timeupdatefn" 
+      id="video" 
+      initial-time=12
+      src="http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46"
+      controls=true>
+     </taro-audio>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Video'
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Video'})
+    },
+    preparedfn () {
+      console.log('preparedfn')
+    },
+    startfn () {
+      console.log('startfn')
+    },
+    pausefn () {
+      console.log('pausefn')
+    },
+    finishfn () {
+      console.log('finishfn')
+    },
+    errorfn () {
+      console.log('errorfn')
+    },
+    seekingfn () {
+      console.log('seekingfn')
+    },
+    seekedfn () {
+      console.log('seekedfn')
+    },
+    timeupdatefn () {
+      console.log('timeupdatefn')
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

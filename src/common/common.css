@@ -1,0 +1,20 @@
+.taro_demo{
+  flex: 1;
+  background-color: #fff;
+  flex-direction: column;
+}
+
+.taro_title_wrap {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  justify-content: center;
+}
+.taro_title{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-color: #bbbbbb;
+  color: #bbbbbb;
+  border-bottom-width: 2px;
+}

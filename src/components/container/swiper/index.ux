@@ -1,0 +1,59 @@
+<import name="taro-swiper" src="../../../packages/swiper/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-swiper 
+      class-name="swiper" 
+      autoplay="{{autoPlay}}" 
+      interval="{{interval}}" 
+      indicator-dots="{{indicator}}" 
+      current=1
+      circular="{{circular}}">
+      <text class="item color_1">A</text>
+      <text class="item color_2">B</text>
+      <text class="item color_3">C</text>
+    </taro-swiper>
+ 
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Swiper',
+      autoPlay: true,
+      indicator: true,
+      circular: true,
+      interval: 1000
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Swiper'})
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+  .swiper {
+    flex-direction: column;
+    height: 250px;
+  }
+  .item {
+    height: 250px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .color_1 {
+    background-color: #09ba07;
+  }
+  .color_2 {
+    background-color: #f76160;
+  }
+  .color_3 {
+    background-color: #0faeff;
+  }
+</style>

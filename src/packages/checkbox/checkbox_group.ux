@@ -1,0 +1,78 @@
+<import name="checkbox" src="./index.ux"></import>
+
+<template>
+  <div class="taro_checkbox_group {{className}}" >
+    <!-- <block for="item in list">
+      <checkbox value='{{item.value}}' checked="{{item.checked}}" @change="handleCheck"></checkbox>
+    </block> -->
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    name: 'checkboxGroup',
+    props: {
+      id: {
+        type: String,
+        required: false
+      },
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      style: Object,
+      target: {
+        type: String,
+        required: false
+      },
+      checked: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      list: {
+        type: Array,
+        required: true
+      },
+
+    },
+
+    data: {
+      currentValue: []
+    },
+
+    onInit() {
+      this.currentValue = this.list
+      this.$on('change', this.handleCheck)
+    },
+
+    onReady() {
+      // this.$watch('currentValue', this.handleChange)
+    },
+
+    handleChange() {
+      // this.$emit('change', this.currentValue.map((item)=>{item.checked}))
+    },
+
+    handleCheck (e) {
+      console.log(222222222)
+      this.currentValue.forEach((item) => {
+        if (item.value === e.detail.value) {
+          item.checked = e.checked
+        }
+      })
+      this.$emit('change', this.currentValue.map((item) => {
+        item.checked
+      }))
+    }
+  }
+</script>
+
+<style>
+  .taro_checkbox_group {
+
+  }
+</style>

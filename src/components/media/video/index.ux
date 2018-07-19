@@ -1,0 +1,66 @@
+<import name="taro-video" src="../../../packages/video/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-video 
+      class-name="flex-1" 
+      poster="https://www.quickapp.cn/assets/images/home/video.png" 
+      autoplay=false 
+      onprepared="preparedfn"
+      onplay="startfn" 
+      onpause="pausefn" 
+      onended="finishfn" 
+      onerror="errorfn" 
+      onseeking="seekingfn" 
+      onseeked="seekedfn"
+      ontime-update="timeupdatefn" 
+      id="video" 
+      initial-time=12
+      src="https://swsdl.vivo.com.cn/appstore/developer/uploadfile/20180323/20180323183010837.mp4"
+      controls=true>
+     </taro-video>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Video'
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Video'})
+    },
+    preparedfn () {
+      console.log('preparedfn')
+    },
+    startfn () {
+      console.log('startfn')
+    },
+    pausefn () {
+      console.log('pausefn')
+    },
+    finishfn () {
+      console.log('finishfn')
+    },
+    errorfn () {
+      console.log('errorfn')
+    },
+    seekingfn () {
+      console.log('seekingfn')
+    },
+    seekedfn () {
+      console.log('seekedfn')
+    },
+    timeupdatefn () {
+      console.log('timeupdatefn')
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

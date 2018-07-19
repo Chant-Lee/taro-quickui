@@ -1,0 +1,27 @@
+<import name="taro-icon" src="../../../packages/icon/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-icon type='success'></taro-icon>
+    <taro-icon type='waiting'></taro-icon>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Icon'
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Icon'})
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

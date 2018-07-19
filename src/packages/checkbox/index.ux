@@ -1,0 +1,83 @@
+<template>
+  <div class="taro_checkbox">
+    <input
+      class="{{className}}"
+      id="{{id}}"
+      style="{{checkboxStyle}}"
+      name="{{name}}"
+      value="{{value}}"
+      type="checkbox"
+      checked="{{checked}}"
+      disabled="{{disabled}}"
+      @change="handleChange"/>
+    <text>{{value}}</text>
+  </div>
+</template>
+
+<script>
+
+  export default {
+
+    props: {
+      id: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      style: {
+        type: Object,
+        required: false,
+        default: {}
+      },
+      target: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      value: String,
+      name: {
+        type: String,
+        required: false
+      },
+      checked: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      color: {
+        type: String,
+        required: false,
+        default: ''
+      }
+    },
+
+    data: () => ({
+      isGroup: false,
+      checkboxStyle: {}
+    }),
+
+    onInit () {
+      this.checkboxStyle = Object.assign({}, this.style, { 'color:': this.color, })
+    },
+
+    handleChange ({ value }) {
+      this.$dispatch('change', {value} )
+    }
+  }
+</script>
+
+<style>
+  .taro_checkbox {
+
+  }
+</style>

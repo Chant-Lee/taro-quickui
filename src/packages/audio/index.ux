@@ -1,0 +1,169 @@
+<template>
+  <div class="audio {{className}}" id="{{id}}">
+    <div class="audio_content">
+      <div 
+        class="player_ontent" 
+        @click="playAudio" 
+        show="{{controls}}">
+        <image class="audio_content_img" show="{{playerStatus}}" src="./start.png"></image>
+        <image class="audio_content_img" show="{{!playerStatus}}" src="./pause.png"></image>
+      </div>
+      <text class="duration_content">{{spendTime}}/{{totalTime}}</text>
+      <slider
+        class="audio_slider"
+        min="0" 
+        max="{{duration}}"
+        step="1"
+        value="{{currentTime}}"
+        @change="sliderChange">
+      </slider>
+    </div>
+  </div>
+</template>
+
+<style>
+
+  .audio_content {
+    flex-direction: row;
+    background-color: #dddddd;
+  }
+  .player_content {
+    height: 120px;
+    width: 100px;
+    justify-content: center;
+    align-items: center; 
+  }
+  .audio_content_img {
+    height: 40px;
+    width: 40px;
+  }
+  .duration_content {
+    height: 120px;
+    text-align: center;
+    font-size: 25px;
+    width: 200px;
+    color: #000000;
+  }
+  .audio_slider {
+    color: #FFFFFF;
+    padding-left: 20px;
+    width: 100%;
+  }
+</style>
+
+<script>
+  import audio from '@system.audio'
+  const jsonString = require('safe-json-stringify')
+  export default {
+    data: ()=> ({
+      duration: 100,
+      spendTime: '00:00',
+      totalTime: '00:00',
+      currentTime: 0,
+      playerStatus: true
+    }),
+    props: {
+      id: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      style: {
+        type: Object,
+        required: false,
+        default: {}
+      },
+      src: {
+        type: String,
+        required: true,
+        default: ''
+      },
+      autoplay: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      initialTime: {
+        type: Number,
+        required: false,
+        default: 0
+      },
+      controls: {
+        type: Boolean,
+        required: false,
+        default: true
+      }
+    },
+    onInit () {
+      audio.src = this.src
+      audio.autoplay = this.autoplay
+      audio.currentTime = this.initialTime
+      audio.loop = this.loop
+      this.currentTime = this.initialTime
+      this.duration = audio.duration
+      this.totalTime = this.formatTime(audio.duration)
+      this.audioInit()
+    },
+    audioInit () {
+      audio.onloadeddata = () => {
+        this.$emit('play')
+        audio.ontimeupdate =  () => {
+          this.updateAudio()
+        }
+        audio.onpause =  () => {
+          this.$emit('pause')
+        }
+        audio.onended = () => {
+          this.playerStatus = true
+          this.$emit('ended')
+        }
+        // 出错时触发
+        audio.onerror = () => {
+          console.info('error')
+          this.$emit('error')
+        }
+        audio.ondurationchange = () => {
+          console.info('change')
+          this.$emit('change')
+        }
+      }
+    },
+
+    playAudio () {
+      if (this.playerStatus) {
+        audio.play()
+      } else {
+        audio.pause()
+      }
+      this.playerStatus = !this.playerStatus
+    },
+
+    updateAudio () {
+      const time = audio.currentTime
+      this.currentTime = time
+      this.spendTime = this.formatTime(time)
+    },
+
+    sliderChange (e) {
+      const value = e.progress - audio.currentTime
+      if(value > 1 || value < -1) {
+        audio.currentTime = e.progress
+        this.playerStatus = false
+      }
+    },
+    formatTime (time) {
+      const s = parseInt(time)
+      if(!s) {return '00:00'}
+      const m = parseInt(s/60)
+      const se = s%60
+      const min = m >= 10 ? m : '0' + m
+      const sec = se >= 10 ? se : '0' + se
+      return min + ':' + sec
+    }
+  }
+</script>

@@ -1,0 +1,29 @@
+<import name="taro-switch" src="../../../packages/switch/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-switch></taro-switch>
+    <taro-switch id='switch' checked=true></taro-switch>
+  </div>
+</template>
+
+<script>
+  const safeJsonStringify = require('safe-json-stringify')
+  export default {
+
+    private: {
+      componentName: 'Switch',
+      sliderValue: 50
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Switch'})
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

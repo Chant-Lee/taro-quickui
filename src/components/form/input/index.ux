@@ -1,0 +1,61 @@
+<import name="taro-input" src="../../../packages/input/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <div class="input_item">
+      <text class="input_title">input type="text"</text>
+      <taro-input class-name="input_text" placeholder="请输入text" onchange="showChangePrompt"></taro-input>
+    </div>
+  </div>
+</template>
+
+<script>
+  import prompt from '@system.prompt'
+  export default {
+
+    private: {
+      componentName: 'Input'
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Input'})
+    },
+    showChangePrompt (e) {
+      prompt.showToast({
+        message: (e.name === undefined ? '' : '---name: ' + e.name)
+        + (e.text === undefined ? '' : '---text: ' + e.text)
+      })
+    },
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+  .input_item {
+    margin-bottom: 80px;
+    flex-direction: column;
+  }
+  .input_title {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+  }
+  .input_text {
+    height: 80px;
+    line-height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: #999999;
+    font-size: 30px;
+    background-color: #ffffff;
+  }
+  .input_text:focus {
+    border-color: #f76160;
+  }
+</style>

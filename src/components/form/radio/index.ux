@@ -1,0 +1,64 @@
+<import name="taro-radio" src="../../../packages/radio/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-radio value='111111'></taro-radio>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Radio',
+      list: [
+        {
+          value: '美国',
+          text: '美国',
+          checked: false
+        },
+        {
+          value: '中国',
+          text: '中国',
+          checked: true
+        },
+        {
+          value: '巴西',
+          text: '巴西',
+          checked: false
+        },
+        {
+          value: '日本',
+          text: '日本',
+          checked: false
+        },
+        {
+          value: '英国',
+          text: '英国',
+          checked: false
+        },
+        {
+          value: '法国',
+          text: '法国',
+          checked: false
+        }
+      ]
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Radio'})
+    },
+    handleCheckBox (e) {
+      console.log(e.detail)
+    },
+    handleCheck (e) {
+      console.log(e.detail)
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

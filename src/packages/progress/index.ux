@@ -1,0 +1,104 @@
+<template>
+  <div class="taro_progress">
+    <progress 
+      class="taro_progress_info {{className}}" 
+      style="{{progressStyle}}" 
+      type="{{type}}" 
+      percent="{{percent}}" 
+      @click="handleClick" 
+      disabled="{{disabled}}">
+    </progress>
+    <text class="taro_progress_text" if="showInfo">{{percent}}%</text>
+  </div>
+</template>
+
+<script>
+
+  export default {
+
+    props: {
+      type: {
+        type: String,
+        required: false,
+        default: 'horizontal'
+      },
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      id: {
+        type: String,
+        required: false
+      },
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      style: {
+        type: Object,
+        required: false,
+        default: {}
+      },
+      percent: {
+        type: Number,
+        required: false,
+        default: 0
+      },
+      showInfo: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      color: {
+        type: String,
+        required: false,
+        default: '#09BB07'
+      },
+      backgroundColor: {
+        type: String,
+        required: false,
+        default: '#fff'
+      },
+      activeColor: {
+        type: String,
+        required: false,
+        default: '#09BB07'
+      },
+      strokeWidth: {
+        type: Number,
+        required: false,
+        default: 6
+      }
+    },
+
+    data: () => ({
+      progressStyle: {}
+    }),
+
+    onInit() {
+      this.progressStyle = Object.assign(this.style, { 'background': this.backgroundColor,
+        'color:': this.activeColor, 'stroke-width:': this.strokeWidth})
+    },
+
+    handleClick(e) {
+      this.$emit('click', e)
+    }
+  }
+</script>
+
+<style>
+  .taro_progress {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .taro_progress_info {
+    flex: 1;
+  }
+
+  .taro_progress_text {
+    width: 10%;
+  }
+</style>

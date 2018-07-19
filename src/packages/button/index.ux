@@ -1,0 +1,127 @@
+<template>
+  <div
+    class="taro_button {{className}} btn_size_{{size}} btn_color_{{type}}"
+    style="{{btnStyle}}"
+    id="{{id}}"
+    @click="handleClick"
+    disabled="{{disabled}}">
+    <image show="{{loading}}" class="taro_btn_loading" src="{{loadingImg}}"></image>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+
+  import LOADING_IMG from './image.js'
+  
+  export default {
+
+    props: {
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      id: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      style: {
+        type: Object,
+        required: false,
+        default: {}
+      },
+      size: {
+        type: String,
+        required: false,
+        default: 'default'
+      },
+      plain: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      loading: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      type: {
+        type: String,
+        required: false,
+        default: 'default'
+      }
+    },
+
+    data: () => ({
+      btnStyle: {},
+      loadingImg: LOADING_IMG,
+    }),
+    onInit () {
+      let defaultStyle = {}
+      this.btnStyle = Object.assign({}, this.style, defaultStyle)
+    },
+
+    handleClick (e) {
+      this.$emit('click', e)
+    }
+  }
+</script>
+
+<style>
+  .taro_button {
+    display: flex;
+    width: 100%;
+    height: 46px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+  }
+  /*默认大小*/
+  .btn_size_default {
+    width: 200px;
+    height: 70px;
+  }
+  .btn_size_mini {
+    width: 128px;
+    height: 60px;
+  }
+  /*按钮颜色*/
+  .btn_color_default {
+    background-color: #fff;
+  }
+  .btn_color_primary {
+    background-color: green;
+  }
+  .btn_color_warn {
+    background-color: red;
+  }
+  .taro_btn_loading {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+
+  }
+  @keyframes taroQuickLoading {
+    0% {
+      transform: rotate(0deg)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
+</style>
