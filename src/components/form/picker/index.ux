@@ -1,0 +1,80 @@
+<import name="taro-picker" src="../../../packages/picker/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <text class="item-title">地址选择器</text>
+    <taro-picker 
+      class-name="picker" 
+      mode="selector" 
+      range="{{selector}}"
+      value="{{selectorValue}}" 
+      onchange="handleChange">
+    </taro-picker >
+    <text class="item-title">时间选择器</text>
+    <taro-picker 
+      class-name="picker" 
+      mode='time'
+      value="{{time}}" 
+      onchange="getTime">
+    </taro-picker >
+    <text class="item-title">时间选择器</text>
+    <taro-picker 
+      class-name="picker" 
+      mode='date'
+      value="{{date}}" 
+      onchange="getDate">
+    </taro-picker >
+    <text class="item-title">多行选择器</text>
+    <taro-picker 
+      class-name="picker" 
+      mode="multiSelector" 
+      range="{{multiSelector}}"
+      value="{{select}}" 
+      onchange="getValue">
+    </taro-picker >
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Picker',
+      selectorValue: 1,
+      select: [0, 0],
+      selector: ['美国', '中国', '巴西', '日本'],
+      multiSelector: [['饭', '粥', '粉'], ['猪肉', '牛肉']],
+    },
+    onInit () {
+      const nowTime = new Date()
+      const Y = nowTime.getFullYear()
+      const M = nowTime.getMonth() + 1
+      const D = nowTime.getDate()
+      const H = nowTime.getHours()
+      const m = nowTime.getMinutes()
+      this.date = Y + '-' + M + '-' + D
+      this.time = H + ':' + m
+      this.$page.setTitleBar({text: 'Picker'})
+    },
+    handleChange (e) {
+      this.selectorValue = e.detail.value
+    },
+    getTime (e) {
+      this.time = e.detail.value
+    },
+    getDate (e) {
+      this.date = e.detail.value
+      console.log(777777, e.detail.value)
+    },
+    getValue (e) {
+      this.select = e.detail.value
+    } 
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+</style>

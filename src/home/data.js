@@ -60,10 +60,10 @@ export const tabsData = {
             name: 'label',
             path: 'components/form/label'
           },
-          // {
-          //   name: 'picker',
-          //   path: 'components/form/picker'
-          // },
+          {
+            name: 'picker',
+            path: 'components/form/picker'
+          },
           {
             name: 'Radio',
             path: 'components/form/radio'

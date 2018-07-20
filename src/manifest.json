@@ -40,6 +40,9 @@
       "components/basic/rich_text": {
         "component": "index"
       },
+      "components/basic/text": {
+        "component": "index"
+      },
       "components/form/input": {
         "component": "index"
       },
@@ -62,6 +65,9 @@
         "component": "index"
       },
       "components/form/radio": {
+        "component": "index"
+      },
+      "components/form/picker": {
         "component": "index"
       },
       "components/media/video": {

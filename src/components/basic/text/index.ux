@@ -1,24 +1,22 @@
-<import name="taro-label" src="../../../packages/label/index.ux"></import>
+<import name="taro-text" src="../../../packages/text/index.ux"></import>
 
 <template>
   <div class="taro_demo">
     <div class="taro_title_wrap">
       <text class="taro_title">{{componentName}}</text>
     </div>
-    <taro-label><text>{{componentName}}</text></taro-label>
+    <taro-text><text>111111</text></taro-text>
   </div>
 </template>
 
 <script>
-  const safeJsonStringify = require('safe-json-stringify')
   export default {
 
     private: {
-      componentName: 'Label',
-      sliderValue: 50
+      componentName: 'Text'
     },
     onInit () {
-      this.$page.setTitleBar({text: 'Label'})
+      this.$page.setTitleBar({text: 'Text'})
     }
   }
 </script>
