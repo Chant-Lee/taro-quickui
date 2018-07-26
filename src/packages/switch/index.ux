@@ -12,7 +12,7 @@
       @change="handleChange"
     />
     <switch
-      elif
+      else
       class="{{className}}"
       style="{{style}}"
       id="{{id}}"
