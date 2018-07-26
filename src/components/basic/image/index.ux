@@ -1,0 +1,34 @@
+<import name="taro-image" src="../../../packages/image/index.ux"></import>
+<import name="taro-rich" src="../../../packages/rich_text/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-image src="{{imageSrc}}"></taro-image>
+    <image class='img' src="{{imageSrc}}"></image>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Image',
+      imageSrc: 'https://img13.360buyimg.com/ling/jfs/t22987/84/1241913397/9731/279840d9/5b583fe8N6bdb6c13.png',
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Image'})
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+ .img {
+   width: 300px;
+   height: 300px;
+   resize-mode: contain;
+ }
+</style>

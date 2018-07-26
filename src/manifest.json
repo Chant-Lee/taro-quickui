@@ -43,6 +43,9 @@
       "components/basic/text": {
         "component": "index"
       },
+      "components/basic/image": {
+        "component": "index"
+      },
       "components/form/input": {
         "component": "index"
       },

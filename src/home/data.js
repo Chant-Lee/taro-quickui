@@ -38,6 +38,10 @@ export const tabsData = {
           {
             name: 'RichText',
             path: 'components/basic/rich_text'
+          },
+          {
+            name: 'Image',
+            path: 'components/basic/image'
           }
         ]
       },
