@@ -16,13 +16,13 @@
       @seeking="handleSeeking"
       @seeked="handleSeeked"
       @timeupdate="handleTimeUpdate"
-      @fullscreenchange="">
+      @fullscreenchange="handleFullScreen">
     </video>
   </div>
 </template>
 
 <script>
-  const jsonString = require('safe-json-stringify')
+
   export default {
 
     props: {
@@ -33,11 +33,12 @@
       },
       id: {
         type: String,
-        required: false
+        required: false,
+        default: 'video'
       },
       src: {
         type: String,
-        required: false,
+        required: true,
       },
       controls: {
         type: Boolean,
@@ -57,6 +58,7 @@
       poster: {
         type: String,
         required: false,
+        default: ''
       },
       initialTime: {
         type: Number,
@@ -64,8 +66,9 @@
         default: 0
       },
       style: {
-        type: String,
+        type: Object,
         required: false,
+        default: {}
       },
     },
 
@@ -74,13 +77,7 @@
     }),
 
     onInit () {
-      console.log(11111111, this.initialTime)
-      console.log(jsonString(this, null, 4))
-    },
-    onReady () {
-
-      // this.$element('video').start()
-      // this.$element('video').setCurrentTime(this.initialTime)
+     
     },
 
     handlePrepared () {
@@ -113,6 +110,10 @@
 
     handleTimeUpdate (currentTime) {
       this.$emit('timeUpdate', currentTime)
+    },
+
+    handleFullScreen (e) {
+      this.$emit('fullscreenchange', e)
     }
 
   }

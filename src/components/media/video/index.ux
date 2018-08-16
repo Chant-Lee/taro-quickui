@@ -16,7 +16,8 @@
       onerror="errorfn" 
       onseeking="seekingfn" 
       onseeked="seekedfn"
-      ontime-update="timeupdatefn" 
+      ontime-update="timeupdatefn"
+      onfullscreenchange="handleScreen" 
       id="video" 
       initial-time=12
       src="https://swsdl.vivo.com.cn/appstore/developer/uploadfile/20180323/20180323183010837.mp4"
@@ -57,6 +58,9 @@
     },
     timeupdatefn () {
       console.log('timeupdatefn')
+    },
+    handleScreen (e) {
+      console.log('进入全屏')
     }
   }
 </script>
