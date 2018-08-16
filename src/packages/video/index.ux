@@ -17,7 +17,7 @@
       @seeked="handleSeeked"
       @timeupdate="handleTimeUpdate"
       @fullscreenchange="">
-    </video>>
+    </video>
   </div>
 </template>
 
