@@ -1,13 +1,26 @@
-<import name="taro-view" src="../../../packages/view/index.ux"></import>
+<import name='taro-view' src='../../../packages/view/index.ux'></import>
 
 <template>
-  <div class="taro_demo">
-    <div class="taro_title_wrap">
-      <text class="taro_title">{{componentName}}</text>
+  <div class='taro_demo'>
+    <div class='taro_title_wrap'>
+      <text class='taro_title'>{{componentName}}</text>
     </div>
-    <taro-view><text>11111111</text></taro-view>
-    <taro-view class-name="taro_test" id="taro_id"><text>222222</text></taro-view>
-    <taro-view disabled="true"><text>33333</text></taro-view>
+    <taro-view class='example_header'>
+      <text>flex-direction: row 横向布局</text>
+    </taro-view>
+    <taro-view class='example_body'>
+      <taro-view class='example_item text_1'><text>A</text></taro-view>
+      <taro-view class='example_item text_2'><text>B</text></taro-view>
+      <taro-view class='example_item text_3'><text>C</text></taro-view>
+    </taro-view>
+    <taro-view class='example_header'>
+      <text>flex-direction: cloumn 横向布局</text>
+    </taro-view>
+    <taro-view class='example_body example_vertical'>
+      <taro-view class='example_item text_1'><text>A</text></taro-view>
+      <taro-view class='example_item text_2'><text>B</text></taro-view>
+      <taro-view class='example_item text_3'><text>C</text></taro-view>
+    </taro-view>
   </div>
 </template>
 
@@ -25,4 +38,37 @@
 
 <style>
   @import '../../../common/common.css';
+  .taro_demo {
+    padding: 0 40px;
+  }
+  .example_header {
+    color: #999;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .example_body {
+    display: flex;
+  }
+  .example_vertical {
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+  }
+  .example_item {
+    height: 300px;
+    width: 90px;
+    color: #ffffff;
+    flex: 1;
+    justify-content: center;
+  }
+  .text_1 {
+    background-color: #1aad19;
+  }
+  .text_2 {
+    background-color: #2782d7;
+  }
+  .text_3 {
+    background-color: #f1f1f1;
+    color: #353535;
+  }
 </style>

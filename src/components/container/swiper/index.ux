@@ -5,8 +5,11 @@
     <div class="taro_title_wrap">
       <text class="taro_title">{{componentName}}</text>
     </div>
+    <div class='example_header'>
+      <text>Swiper 横向布局</text>
+    </div>
     <taro-swiper 
-      class-name="swiper" 
+      class="swiper" 
       autoplay="{{autoPlay}}" 
       interval="{{interval}}" 
       indicator-dots="{{indicator}}" 
@@ -16,7 +19,27 @@
       <text class="item color_2">B</text>
       <text class="item color_3">C</text>
     </taro-swiper>
- 
+    <div class="item_container">
+      <div class="item_content">
+        <text class="item_content_title">指示点</text>
+        <switch class="switch" checked="true" onchange="showIndicator"></switch>
+      </div>
+      <div class="item_content">
+        <text class="item_content_title">自动播放</text>
+        <switch class="switch" checked="true" onchange="startAutoPlay"></switch>
+      </div>
+      <div class="item_content">
+        <text class="item_content_title">循环播放</text>
+        <switch class="switch" checked="true" onchange="switchLoopPlay"></switch>
+      </div>
+    </div>
+    <div class="item_container">
+      <div class="item_content">
+        <text class="item_content_title">自动播放间隔时长(ms)</text>
+        <text class="item_left">{{interval}}</text>
+      </div>
+      <slider class="slider" min="1000" max="3000" onchange="setSliderValue"></slider>
+    </div>
   </div>
 </template>
 
@@ -28,16 +51,32 @@
       autoPlay: true,
       indicator: true,
       circular: true,
-      interval: 1000
+      interval: 1000,
+      duration: 500
     },
     onInit () {
       this.$page.setTitleBar({text: 'Swiper'})
+    },
+    startAutoPlay (e) {
+      this.autoPlay = e.checked
+    },
+    showIndicator (e) {
+      this.indicator = e.checked
+    },
+    switchLoopPlay (e) {
+      this.circular = e.checked
+    },
+    setSliderValue (e) {
+      this.interval = e.progress
     }
   }
 </script>
 
 <style>
   @import '../../../common/common.css';
+  .taro_demo {
+    flex-direction: column;
+  }
   .swiper {
     flex-direction: column;
     height: 250px;
@@ -55,5 +94,28 @@
   }
   .color_3 {
     background-color: #0faeff;
+  }
+  .item_container {
+    margin-bottom: 50px;
+    margin-right: 60px;
+    margin-left: 60px;
+    flex-direction: column;
+  }
+  .item_content {
+
+  }
+  .item_content_title {
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .switch {
+    height: 50px;
+    width: 320px;
+  }
+  .slider {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 </style>
