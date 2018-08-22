@@ -5,8 +5,12 @@
     <div class="taro_title_wrap">
       <text class="taro_title">{{componentName}}</text>
     </div>
-    <taro-progress show-info="{{true}}"><text>111111</text></taro-progress>
-    <taro-progress show-info="{{true}}" percent="{{30}}"><text>111111</text></taro-progress>
+    <div class="example_progress">
+      <taro-progress show-info="{{true}}" background-color="#eee" stroke-width="{{60}}" percent="20" color="#09BB07"></taro-progress>
+    </div>
+    <div class="example_progress">
+      <taro-progress stroke-width="10" percent="3" color="#A020F0"></taro-progress>
+    </div>
   </div>
 </template>
 
@@ -24,4 +28,7 @@
 
 <style>
   @import '../../../common/common.css';
+  .example_progress {
+    width: 100%;
+  }
 </style>

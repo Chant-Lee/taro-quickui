@@ -2,7 +2,7 @@
   <div class="taro_progress">
     <progress 
       class="taro_progress_info {{className}}" 
-      style="{{progressStyle}}" 
+      style="{{progressStyle}}"
       type="{{type}}" 
       percent="{{percent}}" 
       @click="handleClick" 
@@ -39,7 +39,7 @@
       style: {
         type: Object,
         required: false,
-        default: {}
+        default: {flex: 1}
       },
       percent: {
         type: Number,
@@ -67,19 +67,19 @@
         default: '#09BB07'
       },
       strokeWidth: {
-        type: Number,
+        type: String,
         required: false,
         default: 6
       }
     },
 
     data: () => ({
-      progressStyle: {flex: 1}
+      progressStyle: {},
     }),
 
     onInit() {
       this.progressStyle = Object.assign(this.style, { 'background': this.backgroundColor,
-        'color:': this.activeColor, 'stroke-width:': this.strokeWidth})
+        'color': this.color, 'stroke-width': `${this.strokeWidth}px`})
     },
 
     handleClick(e) {
@@ -97,6 +97,7 @@
 
   .taro_progress_info {
     flex: 1;
+    stroke-width: 6px; 
   }
 
   .taro_progress_text {
