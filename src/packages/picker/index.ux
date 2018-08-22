@@ -1,18 +1,18 @@
 <template>
-  <div class='taro_picker'>
-    <text class='label'>当前选择</text>
+  <div class="taro_picker">
+    <text class="label">当前选择</text>
     <picker
-    class='picker {{className}}'
-    id='{{id}}'
-    type='{{type}}'
-    value='{{selectValue}}'
-    selected='{{selected}}'
-    disabled='{{disabled}}'
-    range='{{range}}'
-    start='{{start}}'
-    end='{{end}}'
-    @change='handleChange'
-    @cancel='handleCancel'>
+    class="picker {{className}}"
+    id="{{id}}"
+    type="{{type}}"
+    value="{{selectValue}}"
+    selected="{{selected}}"
+    disabled="{{disabled}}"
+    range="{{range}}"
+    start="{{start}}"
+    end="{{end}}"
+    @change="handleChange"
+    @cancel="handleCancel">
    </picker>
   </div>
  

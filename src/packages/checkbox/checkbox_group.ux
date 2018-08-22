@@ -1,9 +1,9 @@
-<import name='checkbox' src='./index.ux'></import>
+<import name="checkbox" src="./index.ux"></import>
 
 <template>
-  <div class='taro_checkbox_group {{className}}' >
-    <!-- <block for='item in list'>
-      <checkbox value='{{item.value}}' checked='{{item.checked}}' @change='handleCheck'></checkbox>
+  <div class="taro_checkbox_group {{className}}" >
+    <!-- <block for="item in list">
+      <checkbox value='{{item.value}}' checked="{{item.checked}}" @change="handleCheck"></checkbox>
     </block> -->
     <slot></slot>
   </div>

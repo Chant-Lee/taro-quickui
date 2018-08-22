@@ -1,14 +1,14 @@
 <template>
-  <div class='taro_radio'>
+  <div class="taro_radio">
     <input
-      value='{{inputValue}}'
-      name='{{name}}'
-      id='{{id}}'
-      type='radio'
-      class='{{className}}'
-      disabled='{{disabled}}'
-      style='{{style}}'
-      @change='handleChange'/>
+      value="{{inputValue}}"
+      name="{{name}}"
+      id="{{id}}"
+      type="radio"
+      class="{{className}}"
+      disabled="{{disabled}}"
+      style="{{style}}"
+      @change="handleChange"/>
     <slot></slot>
   </div>
 </template>

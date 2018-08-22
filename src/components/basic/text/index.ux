@@ -1,17 +1,11 @@
-<import name='taro-text' src='../../../packages/text/index.ux'></import>
+<import name="taro-text" src="../../../packages/text/index.ux"></import>
 
 <template>
-  <div class='taro_demo'>
-    <div class='taro_title_wrap'>
-      <text class='taro_title'>{{componentName}}</text>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
     </div>
-    <div class='exapmle_header'>
-      <text>H5、小程序、快应用通用</text>
-    </div>
-    <div class='example_body'>
-      <taro-text><text>可选择的文字</text></taro-text>
-    </div>
-    <taro-text ></taro-text>
+    <taro-text><text>111111</text></taro-text>
   </div>
 </template>
 
@@ -28,5 +22,5 @@
 </script>
 
 <style>
-  @import '../../../common/common.css'
+  @import '../../../common/common.css';
 </style>

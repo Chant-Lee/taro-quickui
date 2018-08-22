@@ -1,12 +1,12 @@
 <template>
   <stack
-    class='taro_icon {{className}} icon_{{type}}'
-    style='{{style}}'
-    id='{{id}}'
-    @click='handleClick'
-    disabled='{{disabled}}'>
-    <div class='thumb' if='{{['success', 'waiting'].indexOf(type) > -1}}'></div>
-    <div class='info' elif='{{['warn', 'info'].indexOf(type) > -1}}'>{{typeFont}}</div>
+    class="taro_icon {{className}} icon_{{type}}"
+    style="{{style}}"
+    id="{{id}}"
+    @click="handleClick"
+    disabled="{{disabled}}">
+    <div class="thumb" if="{{['success', 'waiting'].indexOf(type) > -1}}"></div>
+    <div class="info" elif="{{['warn', 'info'].indexOf(type) > -1}}">{{typeFont}}</div>
   </stack>
 </template>
 

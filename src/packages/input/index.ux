@@ -1,18 +1,18 @@
 <template>
     <input
-      placeholder='{{placeholder}}'
-      value='{{inputValue}}'
-      name='{{name}}'
-      maxlength='{{maxlength}}'
-      type='{{type}}'
-      class='{{className}}'
-      disabled='{{disabled}}'
-      style='{{inputStyle}}'
-      enterkeytype='{{confirmType}}'
-      @change='onInput'
-      @enterkeyclick='onConfirm'
-      @focus='onFocus'
-      @blur='onBlur'
+      placeholder="{{placeholder}}"
+      value="{{inputValue}}"
+      name="{{name}}"
+      maxlength="{{maxlength}}"
+      type="{{type}}"
+      class="{{className}}"
+      disabled="{{disabled}}"
+      style="{{inputStyle}}"
+      enterkeytype="{{confirmType}}"
+      @change="onInput"
+      @enterkeyclick="onConfirm"
+      @focus="onFocus"
+      @blur="onBlur"
     />
   </template>
   

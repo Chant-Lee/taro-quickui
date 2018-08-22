@@ -1,8 +1,8 @@
 <template>
   <div
-    class='{{className}}'
-    style='{{style}}'
-    @click='handleClick'>
+    class="{{className}}"
+    style="{{style}}"
+    @click="handleClick">
     <slot></slot>
   </label>
 </template>

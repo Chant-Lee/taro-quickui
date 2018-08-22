@@ -1,14 +1,14 @@
 <template>
-  <div class='taro_slider '>
+  <div class="taro_slider ">
     <slider
-      class='taro_slider_info {{className}}'
-      style='{{sliderStyle}}'
-      disabled='{{disabled}}'
-      min='{{min}}'
-      max='{{max}}'
-      @change='handleChange'>
+      class="taro_slider_info {{className}}"
+      style="{{sliderStyle}}"
+      disabled="{{disabled}}"
+      min="{{min}}"
+      max="{{max}}"
+      @change="handleChange">
     </slider>
-    <text class='taro_slider_text' show='{{showValue}}'>{{value}}</text>
+    <text class="taro_slider_text" show="{{showValue}}">{{value}}</text>
   </div>
 </template>
 
