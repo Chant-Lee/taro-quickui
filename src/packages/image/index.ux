@@ -1,11 +1,11 @@
 <template>
   <image
-    src="{{src}}"
-    alt="{{alt}}"
-    id="{{id}}"
-    class="taro_image {{className}}"
-    style="{{imageStyle}}"
-    @click="handleClick">
+    src='{{src}}'
+    alt='{{alt}}'
+    id='{{id}}'
+    class='taro_image {{className}}'
+    style='{{imageStyle}}'
+    @click='handleClick'>
   </image>
 </template>
 

@@ -1,24 +1,24 @@
 <template>
-  <div class="taro_switch">
+  <div class='taro_switch'>
     <input
-      if="{{type === 'checkbox'}}"
-      class="{{className}}"
-      id="{{id}}"
-      style="{{style}}"
-      value="{{value}}"
-      type="checkbox"
-      checked="{{checked}}"
-      disabled="{{disabled}}"
-      @change="handleChange"
+      if='{{type === 'checkbox'}}'
+      class='{{className}}'
+      id='{{id}}'
+      style='{{style}}'
+      value='{{value}}'
+      type='checkbox'
+      checked='{{checked}}'
+      disabled='{{disabled}}'
+      @change='handleChange'
     />
     <switch
       else
-      class="{{className}}"
-      style="{{style}}"
-      id="{{id}}"
-      disabled="{{disabled}}"
-      checked="{{checked}}"
-      @change="handleChange">
+      class='{{className}}'
+      style='{{style}}'
+      id='{{id}}'
+      disabled='{{disabled}}'
+      checked='{{checked}}'
+      @change='handleChange'>
     </switch>
   </div>
 </template>

@@ -1,15 +1,15 @@
 <template>
-  <div class="taro_checkbox">
+  <div class='taro_checkbox'>
     <input
-      class="{{className}}"
-      id="{{id}}"
-      style="{{checkboxStyle}}"
-      name="{{name}}"
-      value="{{value}}"
-      type="checkbox"
-      checked="{{checked}}"
-      disabled="{{disabled}}"
-      @change="handleChange"/>
+      class='{{className}}'
+      id='{{id}}'
+      style='{{checkboxStyle}}'
+      name='{{name}}'
+      value='{{value}}'
+      type='checkbox'
+      checked='{{checked}}'
+      disabled='{{disabled}}'
+      @change='handleChange'/>
     <text>{{value}}</text>
   </div>
 </template>

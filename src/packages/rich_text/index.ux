@@ -1,9 +1,9 @@
 <template>
   <richtext 
-    class="taro_rich_text {{className}}" 
-    style="{{style}}" 
-    type="html" 
-    @click="handleClick">
+    class='taro_rich_text {{className}}' 
+    style='{{style}}' 
+    type='html' 
+    @click='handleClick'>
     {{nodes}}
   </richtext>
 </template>

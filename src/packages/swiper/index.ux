@@ -1,14 +1,14 @@
 <template>
   <swiper
-    class="taro_swiper {{className}}"
-    style="{{swiperStyle}}"
-    id="{{id}}"
-    autoplay="{{autoplay}}"
-    index="{{current}}"
-    interval="{{interval}}"
-    indicator="{{indicatorDots}}"
-    loop="{{circular}}"
-    @change="handleChange">
+    class='taro_swiper {{className}}'
+    style='{{swiperStyle}}'
+    id='{{id}}'
+    autoplay='{{autoplay}}'
+    index='{{current}}'
+    interval='{{interval}}'
+    indicator='{{indicatorDots}}'
+    loop='{{circular}}'
+    @change='handleChange'>
     <slot></slot>
   </swiper>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <div
-    class="taro_button {{className}} btn_size_{{size}} btn_color_{{type}}"
-    style="{{btnStyle}}"
-    id="{{id}}"
-    @click="handleClick"
-    disabled="{{disabled}}">
-    <image show="{{loading}}" class="taro_btn_loading" src="{{loadingImg}}"></image>
+    class='taro_button {{className}} btn_size_{{size}} btn_color_{{type}}'
+    style='{{btnStyle}}'
+    id='{{id}}'
+    @click='handleClick'
+    disabled='{{disabled}}'>
+    <image show='{{loading}}' class='taro_btn_loading' src='{{loadingImg}}'></image>
     <slot></slot>
   </div>
 </template>

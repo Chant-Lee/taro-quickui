@@ -1,14 +1,14 @@
 <template>
-  <div class="taro_progress">
+  <div class='taro_progress'>
     <progress 
-      class="taro_progress_info {{className}}" 
-      style="{{progressStyle}}" 
-      type="{{type}}" 
-      percent="{{percent}}" 
-      @click="handleClick" 
-      disabled="{{disabled}}">
+      class='taro_progress_info {{className}}' 
+      style='{{progressStyle}}' 
+      type='{{type}}' 
+      percent='{{percent}}' 
+      @click='handleClick' 
+      disabled='{{disabled}}'>
     </progress>
-    <text class="taro_progress_text" if="showInfo">{{percent}}%</text>
+    <text class='taro_progress_text' if='showInfo'>{{percent}}%</text>
   </div>
 </template>
 
