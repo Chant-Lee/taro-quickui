@@ -2,10 +2,10 @@
 
 <template>
   <div class="taro_checkbox_group {{className}}" >
-    <!-- <block for="item in list">
+    <block for="item in list">
       <checkbox value='{{item.value}}' checked="{{item.checked}}" @change="handleCheck"></checkbox>
-    </block> -->
-    <slot></slot>
+    </block>
+    <!-- <slot></slot> -->
   </div>
 </template>
 
