@@ -8,10 +8,10 @@
   "features": [
     { "name": "system.prompt" },
     { "name": "system.router" },
-    { "name": "system.shortcut" },
+    { "name": "system.shortcut"},
     { "name": "system.prompt"},
-    { "name":  "@system.audio"},
-    { "name":  "@system.media"}
+    { "name": "@system.audio"},
+    { "name": "@system.media"}
   ],
   "permissions": [
     { "origin": "*" }

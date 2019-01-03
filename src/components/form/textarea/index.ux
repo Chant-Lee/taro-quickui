@@ -10,9 +10,7 @@
 </template>
 
 <script>
-  const safeJsonStringify = require('safe-json-stringify')
   export default {
-
     private: {
       componentName: 'Textarea',
       sliderValue: 50

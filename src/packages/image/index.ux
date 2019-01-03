@@ -55,10 +55,10 @@
       switch (this.model) {
         case 'scaleToFill':
           this.imageStyle['resize-mode'] = 'contain'
-          break;
+          break
         case  'widthFix':
           this.imageStyle['resize-mode'] = 'cover'
-          break;
+          break
         default:
           this.imageStyle['resize-mode'] = 'contain'
       }

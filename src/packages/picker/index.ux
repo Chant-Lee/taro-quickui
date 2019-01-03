@@ -19,9 +19,7 @@
 </template>
 
 <script>
-  const jsonS = require('safe-json-stringify')
   export default {
-
     props: {
       className: {
         type: String,
@@ -64,7 +62,6 @@
         default: '2100-12-31'
       },
     },
-
     data: () => ({
       type: 'text',
       selectValue: '',
@@ -97,7 +94,6 @@
       }
     },
     handleChange (e) { 
-      console.log(jsonS(e, null, 4))
       switch (this.mode) {
         case 'selector':
           let index = this.range.indexOf(e.newValue)

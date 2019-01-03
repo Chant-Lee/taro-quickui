@@ -13,9 +13,7 @@
 </template>
 
 <script>
-  const safeJsonStringify = require('safe-json-stringify')
   export default {
-
     props: {
       className: {
         type: String,
