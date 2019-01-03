@@ -10,7 +10,7 @@
 
           <div class="item-container" for="{{(index, group) in dataMap[tabItem].groupList}}">
             <div class="item-title">
-              <text class="item-title-detail {{selectedIdxMap[tabItem] === index ? 'selected-text': ''}}" @click="selectConFn(tabItem, index)">{{group.name}}</text>
+              <text class="item-title-detail {{selectedIdxMap[tabItem] === index ? 'selected-text': ''}}" onclick="selectConFn(tabItem, index)">{{group.name}}</text>
             </div>
             <div class="item-content {{selectedIdxMap[tabItem] === index ? 'selected-group': ''}}">
               <block for="{{case in group.caseList}}">

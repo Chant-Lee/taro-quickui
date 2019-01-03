@@ -112,7 +112,7 @@ export const tabsData = {
         caseList: [
           {
             name: 'navigator',
-            path: 'components/navigator/navigator'
+            path: 'components/basic/navigator'
           }
         ]
       }

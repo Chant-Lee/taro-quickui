@@ -4,7 +4,7 @@
     style="{{style}}"
     disabled="{{disabled}}"
     id="{{id}}"
-    @click="handleClick">
+    onclick="handleClick">
     <slot></slot>
   </div>
 </template>

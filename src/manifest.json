@@ -81,6 +81,9 @@
       },
       "components/media/camera": {
         "component": "index"
+      },
+      "components/basic/navigator": {
+        "component": "index"
       }
     }
   },

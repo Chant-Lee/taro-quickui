@@ -5,7 +5,7 @@
     id="{{id}}"
     class="taro_image {{className}}"
     style="{{imageStyle}}"
-    @click="handleClick">
+    onclick="handleClick">
   </image>
 </template>
 

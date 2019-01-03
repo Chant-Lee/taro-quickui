@@ -1,0 +1,48 @@
+<template>
+  <canvas
+    style="{{style}}" 
+    class="{{className}}" 
+    id="{{canvasId}}"
+  >
+  </canvas>
+</template>
+
+<style>
+  .camera {
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+
+<script>
+  import prompt from '@system.prompt'
+  import media from '@system.media'
+
+  export default {
+
+    props: {
+      canvasId: {
+        type: String,
+        required: true,
+        default: 'taroCanvs'
+      },
+      className: {
+        type: String,
+        required: false,
+        default: ''
+      },
+      style: {
+        type: Object,
+        required: false,
+        default: {}
+      }
+    },
+
+    data: ()=> ({
+    }),
+
+    onInit () {
+
+    }
+  }
+</script>

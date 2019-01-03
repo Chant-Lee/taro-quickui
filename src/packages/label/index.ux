@@ -2,15 +2,14 @@
   <div
     class="{{className}}"
     style="{{style}}"
-    @click="handleClick">
+    onclick="handleClick"
+  >
     <slot></slot>
   </label>
 </template>
 
 <script>
-
   export default {
-
     props: {
       className: {
         type: String,

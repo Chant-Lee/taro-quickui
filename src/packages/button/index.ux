@@ -3,8 +3,9 @@
     class="{{btnClass}}"
     style="{{btnStyle}}"
     id="{{id}}"
-    @click="handleClick"
-    disabled="{{disabled}}">
+    onclick="handleClick"
+    disabled="{{disabled}}"
+  >
     <image show="{{loading}}" class="taro_btn_loading" src="{{loadingImg}}"></image>
     <slot></slot>
   </div>

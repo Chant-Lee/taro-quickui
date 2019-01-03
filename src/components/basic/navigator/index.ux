@@ -1,0 +1,28 @@
+<import name="taro-navigator" src="../../../packages/navigator/index.ux"></import>
+
+<template>
+  <div class="taro_demo">
+    <div class="taro_title_wrap">
+      <text class="taro_title">{{componentName}}</text>
+    </div>
+    <taro-navigator url="{{url}}" open-type="navigate"><text>11111111</text></taro-image>
+  </div>
+</template>
+
+<script>
+  export default {
+
+    private: {
+      componentName: 'Navigator',
+      url: '/home',
+    },
+    onInit () {
+      this.$page.setTitleBar({text: 'Navigator'})
+    }
+  }
+</script>
+
+<style>
+  @import '../../../common/common.css';
+
+</style>

@@ -5,7 +5,7 @@
       style="{{progressStyle}}"
       type="{{type}}" 
       percent="{{percent}}" 
-      @click="handleClick" 
+      onclick="handleClick" 
       disabled="{{disabled}}">
     </progress>
     <text class="taro_progress_text" if="showInfo">{{percent}}%</text>

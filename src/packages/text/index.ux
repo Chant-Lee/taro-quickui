@@ -3,7 +3,7 @@
     class="{{className}}"
     id="{{id}}"
     style="{{style}}"
-    @click="handleClick">
+    onclick="handleClick">
     <slot></slot>
   </div>
 </template>

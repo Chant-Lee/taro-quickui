@@ -84,6 +84,7 @@
     }),
 
     onInit () {
+
       audio.src = this.src
       audio.autoplay = this.autoplay
       this.volume = parseInt(audio.volume * 10)
